@@ -73,10 +73,16 @@ h2 {
   margin-bottom: 20px;
 }
 
-.project img {
-  width: 120px;
-  border-radius: 8px;
-  object-fit: cover;
+.project img,
+.profile img {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.project:hover img,
+.profile img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03);
 }
 
 a {
@@ -88,6 +94,15 @@ footer {
   margin-top: 70px;
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+.project {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* Reveal animation */
