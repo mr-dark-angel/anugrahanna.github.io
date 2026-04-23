@@ -86,8 +86,24 @@ h2 {
 }
 
 a {
+  position: relative;
+  text-decoration: none;
   color: var(--text);
-  text-decoration: underline;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 footer {
