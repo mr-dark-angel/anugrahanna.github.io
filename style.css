@@ -10,10 +10,10 @@ body.dark {
   margin: 0;
   background-color: #f4f4f4;
   color: #333;
- \\ #--bg: #0f0f0f;
- \\ #--text: #eaeaea;
- \\ #--muted: #aaa;
- \\ #--card: #1a1a1a;
+ // #--bg: #0f0f0f;
+ // #--text: #eaeaea;
+ // #--muted: #aaa;
+ // #--card: #1a1a1a;
 }
 
 body {
