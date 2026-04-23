@@ -2,54 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anugrah | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main>
+    <!-- Header -->
     <header>
-      <h1>Anugrah</h1>
-      <p>Data Engineer | Robotics & Automation Engineer</p>
+      <div>
+        <h1>Anugrah</h1>
+        <p>Trainee Engineer</p>
+      </div>
+
+      <!-- Dark mode toggle -->
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+      </button>
     </header>
 
+    <!-- Profile Image -->
+    <section class="profile">
+      <img src="profile.jpg" alt="Anugrah profile photo" />
+    </section>
+
+    <!-- About -->
     <section>
       <h2>About</h2>
       <p>
-        I’m Anugrah Anna, a Data Engineer | Robotics & Automation Engineer who enjoys learning by building. I’m passionate about technology, problem-solving, and writing clean, maintainable solutions. Currently growing my skills through hands-on projects and collaboration, with a focus on continuous improvement and impact.
+        I am a trainee engineer focused on building clean, reliable software.
+        I enjoy learning new technologies and working on practical projects.
       </p>
     </section>
 
+    <!-- Skills -->
     <section>
       <h2>Skills</h2>
-      <p>Python, HTML, CSS, Git, GitHub, PI, 800xA</p>
+      <p>Java · Python · HTML · CSS · Git · GitHub · SQL</p>
     </section>
 
+    <!-- Projects -->
     <section>
       <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Underwater ROV</strong><br/>
-          <a href="" target="_blank">
-            
+
+      <div class="project">
+        <img src="project1.jpg" alt="Student Management System screenshot" />
+        <div>
+          <strong>Student Management System</strong>
+          <p>Java-based CRUD application for managing student records.</p>
+          <a href="https://github.com/yourusername/project1" target="_blank">
+            GitHub →
           </a>
-        </li>
-        <li>
-          <strong>Portfolio Website</strong><br/>
-          <a href="https://mr-dark-angel.github.io/anugrahanna.github.io/" target="_blank">
-            GitHub
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="project2.jpg" alt="Portfolio website screenshot" />
+        <div>
+          <strong>Portfolio Website</strong>
+          <p>Minimal portfolio built using HTML, CSS, and GitHub Pages.</p>
+          <a href="https://github.com/yourusername/yourusername.github.io" target="_blank">
+            GitHub →
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
 
+    <!-- Contact -->
     <section>
       <h2>Contact</h2>
       <p>
-        <a href="mailto:anugrahanna1@gmail.com">Email</a> ·
-        <a href="www.linkedin.com/in/anugrah-anna" target="_blank">LinkedIn</a> ·
-        <a href="https://github.com/mr-dark-angel" target="_blank">GitHub</a>
+        <a href="mailto:anugrah@email.com">Email</a> ·
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> ·
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
       </p>
     </section>
 
@@ -57,5 +83,7 @@
       <p>© 2026 Anugrah</p>
     </footer>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
