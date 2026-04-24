@@ -21,20 +21,8 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* Dark mode toggle */
-#theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  z-index: 10;
+  line-height: 1.65;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* HERO */
@@ -44,17 +32,22 @@ body {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   background: linear-gradient(
-    to left,
-    rgba(15, 15, 15, 1),
-    rgba(15, 15, 15, 0.95),
-    rgba(15, 15, 15, 0.75),
-    rgba(15, 15, 15, 0.55),
-    rgba(15, 15, 15, 0.35),
-    rgba(15, 15, 15, 0.15),
-    rgba(15, 15, 15, 0)
-  );
+  to bottom,
+  rgba(15,15,15,0.95),
+  rgba(15,15,15,0.85),
+  rgba(15,15,15,0.75),
+  rgba(15,15,15,0.65),
+  rgba(15,15,15,0.55),
+  rgba(15,15,15,0.45),
+  rgba(15,15,15,0.35),
+  rgba(15,15,15,0.25),
+  rgba(15,15,15,0.15),
+  rgba(15,15,15,0.05),
+  transparent 100%
+);
 }
 
+/* HERO TEXT */
 .hero-text {
   padding: 0 12%;
   display: flex;
@@ -65,7 +58,6 @@ body {
 .hero-text h1 {
   font-size: 3rem;
   margin: 0;
-  letter-spacing: -0.5px;
 }
 
 .hero-text p {
@@ -75,7 +67,7 @@ body {
   min-height: 1.4em;
 }
 
-/* Hero image */
+/* HERO IMAGE */
 .hero-image {
   position: relative;
 }
@@ -85,10 +77,10 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(0,0,0,0),
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.5)
+    to left,
+    transparent,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.55)
   );
   z-index: 1;
 }
@@ -97,23 +89,22 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
+  object-position: center 20%;
+  filter: grayscale(30%);
   transition: filter 0.5s ease;
 }
 
 .hero-image img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
 }
 
-/* Scroll Indicator */
+/* SCROLL INDICATOR */
 .scroll-indicator {
   position: absolute;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   font-size: 0.75rem;
   letter-spacing: 1px;
   color: var(--muted);
@@ -128,15 +119,60 @@ body {
 }
 
 @keyframes scrollLine {
-  0% { opacity: 0; transform: translateY(-6px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(8px); }
+  0%   { opacity: 0; transform: translateY(-6px); }
+  50%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
 }
 
-/* MAIN */
+/* THEME SWITCH (ANIMATED) */
+.theme-switch {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 44px;
+  height: 24px;
+  z-index: 10;
+}
+
+.theme-switch input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background: rgba(0,0,0,0.35);
+  border-radius: 20px;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+}
+
+.theme-switch input:checked + .slider {
+  background: rgba(0,0,0,0.5);
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* MAIN CONTENT */
 main {
   max-width: 760px;
-  margin: 0 auto;
+  margin: auto;
   padding: 80px 24px;
 }
 
@@ -148,10 +184,9 @@ h2 {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  margin-bottom: 12px;
 }
 
-/* Projects */
+/* PROJECTS */
 .project {
   display: flex;
   gap: 16px;
@@ -159,7 +194,7 @@ h2 {
   background: var(--card);
   border-radius: 12px;
   margin-bottom: 20px;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project:hover {
@@ -167,41 +202,7 @@ h2 {
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.project img {
-  width: 120px;
-  border-radius: 8px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.4s;
-}
-
-.project:hover img {
-  filter: grayscale(0%);
-}
-
-/* Links */
-a {
-  color: var(--text);
-  text-decoration: none;
-  position: relative;
-}
-
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: currentColor;
-  transition: width 0.3s;
-}
-
-a:hover::after {
-  width: 100%;
-}
-
-/* Reveal animation */
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(25px);
@@ -213,19 +214,28 @@ a:hover::after {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* MOBILE */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+    background: linear-gradient(
+      to bottom,
+      rgba(15,15,15,0.95),
+      rgba(15,15,15,0.85),
+      rgba(15,15,15,0.4),
+      transparent
+    );
   }
 
   .hero-text {
     text-align: center;
-    padding: 0 10%;
+    padding: 80px 10% 40px;
   }
 
   .hero-image {
-    height: 50vh;
+    height: 65vh;
   }
 
   .scroll-indicator {
@@ -235,8 +245,5 @@ a:hover::after {
   .project {
     flex-direction: column;
   }
-
-  .project img {
-    width: 100%;
-  }
 }
+``
