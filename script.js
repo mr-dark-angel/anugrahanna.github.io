@@ -1,8 +1,7 @@
-// Dark mode toggle
+// Dark mode
 const toggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Load saved theme
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggle.textContent = "☀️";
@@ -10,28 +9,22 @@ if (localStorage.getItem("theme") === "dark") {
 
 toggle.addEventListener("click", () => {
   body.classList.toggle("dark");
-
-  if (body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    toggle.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    toggle.textContent = "🌙";
-  }
+  const dark = body.classList.contains("dark");
+  localStorage.setItem("theme", dark ? "dark" : "light");
+  toggle.textContent = dark ? "☀️" : "🌙";
 });
 
-// Scroll reveal animation
+// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
 
-const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
+function revealOnScroll() {
+  const trigger = window.innerHeight - 80;
   reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < windowHeight - 80) {
+    if (el.getBoundingClientRect().top < trigger) {
       el.classList.add("active");
     }
   });
-};
+}
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
