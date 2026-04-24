@@ -2,31 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anugrah | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Dark mode toggle -->
+  <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Anugrah</h1>
+      <p>Data Engineer | Robotics & Automation Engineer</p>
+    </div>
+
+    <div class="hero-image">
+      <img src="profile.jpg" alt="Anugrah" />
+    </div>
+  </section>
+
+  <!-- CONTENT -->
   <main>
-    <!-- Header -->
-    <header class="reveal">
-      <div>
-        <h1>Anugrah</h1>
-        <p>Data Engineer | Robotics & Automation Engineerr</p>
-      </div>
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    </header>
-
-    <!-- Profile -->
-    <section class="profile reveal">
-      <img src="profile.png" alt="Profile picture of Anugrah" />
-    </section>
-
-    <!-- About -->
     <section class="reveal">
       <h2>About</h2>
       <p>
@@ -34,46 +38,38 @@
       </p>
     </section>
 
-    <!-- Currently -->
     <section class="reveal">
       <h2>Currently</h2>
       <p>Improving Java fundamentals and learning backend development.</p>
     </section>
 
-    <!-- Skills -->
     <section class="reveal">
       <h2>Skills</h2>
-      <p>Java · Python · HTML · CSS · Git · GitHub · SQL</p>
+      <p>Python · HTML · CSS · Git · GitHub · SQL</p>
     </section>
 
-    <!-- Projects -->
     <section class="reveal">
       <h2>Projects</h2>
 
       <div class="project">
-        <img src="project1.jpg" alt="Student Management System project screenshot" />
+        <img src="project1.jpg" alt="Project 1" />
         <div>
           <strong>Student Management System</strong>
           <p>Java CRUD application for managing student data.</p>
-          <a href="https://github.com/yourusername/project1" target="_blank">
-            GitHub →
-          </a>
+          <a href="https://github.com/yourusername/project1" target="_blank">GitHub →</a>
         </div>
       </div>
 
       <div class="project">
-        <img src="project2.jpg" alt="Portfolio Website project screenshot" />
+        <img src="project2.jpg" alt="Project 2" />
         <div>
           <strong>Portfolio Website</strong>
-          <p>Minimal interactive portfolio hosted on GitHub Pages.</p>
-          <a href="https://github.com/yourusername/yourusername.github.io" target="_blank">
-            GitHub →
-          </a>
+          <p>Interactive portfolio built with HTML, CSS and JS.</p>
+          <a href="https://github.com/yourusername/yourusername.github.io" target="_blank">GitHub →</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="reveal">
       <h2>Contact</h2>
       <p>
